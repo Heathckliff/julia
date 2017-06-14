@@ -878,7 +878,7 @@ end
 in(x::Real, r::Range{<:Real}) = _in_range(x, r)
 # This method needs to be defined separately since -(::T, ::T) can be implemented
 # even if -(::T, ::Real) is not
-in(x::T, r::Range{<:T}) where {T} = _in_range(x, r)
+in(x::T, r::Range{T}) where {T} = _in_range(x, r)
 
 in(x::Integer, r::AbstractUnitRange{<:Integer}) = (first(r) <= x) & (x <= last(r))
 
